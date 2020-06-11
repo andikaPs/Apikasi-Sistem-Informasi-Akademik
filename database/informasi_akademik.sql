@@ -76,7 +76,7 @@ CREATE TABLE `dosen` (
 
 /*Data for the table `dosen` */
 
-insert  into `dosen`(`idDosen`,`NIP`,`password`,`nama`,`alamat`,`email`,`noTelepon`,`idKelas`,`keterangan`) values ('Dos0001','131413053','3053','A. Rochman Raharjo, S.Kom','Bekasi','arr@bsi.ac.id','87321456642','Kls0003','dosen'),('Dos0002','131417245','7245','Findi Ayu Sariasih, S.T, ','Bekasi','fav@bsi.ac.id','87654567761','Kls0003','dosen'),('Dos0003','131418056','8056','Minda Septiani','Bekasi','mdt@bsi.ac.id','8987656775','Kls0003','dosen'),('Dos0004','131416133','6133','Rahayu Ningsih, M.Kom','Bekasi','ryh@bsi.ac.id','083321874357','Kls0003','dosen'),('Dos0006','131417232','7232','Istihayyu Buanasari, M.Hu','Bekasi','iyb@bsi.ac.id','085220987567','Kls0003','dosen'),('Dos0007','131414383','4383','Silvy Amelia.S.Kom, M.Kom','Bekasi','sva@bsi.ac.id','08976787656','Kls0003','dosen');
+insert  into `dosen`(`idDosen`,`NIP`,`password`,`nama`,`alamat`,`email`,`noTelepon`,`idKelas`,`keterangan`) values ('Dos0001','131411109','1109','Minda Septiani','Bekasi','mdt@bsi.ac.id','4346','Kls0003','dosen');
 
 /*Table structure for table `fakultas` */
 
@@ -115,7 +115,7 @@ CREATE TABLE `jadwalpelajaran` (
 
 /*Data for the table `jadwalpelajaran` */
 
-insert  into `jadwalpelajaran`(`idJadwal`,`idMatkul`,`hari`,`jam`,`ruangan`,`idKelas`,`idDosen`) values ('Jdwl0001','Matkul0003','Senin','11.40-14.10','305','Kls0003','Dos0007'),('Jdwl0002','Matkul0007','Senin','14.10 - 16.40','307','Kls0003','Dos0003'),('Jdwl0003','Matkul0002','Selasa','11.40-14.10','305','Kls0003','Dos0002'),('Jdwl0004','Matkul0006','Selasa','15.00-16.40','303','Kls0003','Dos0006'),('Jdwl0005','Matkul0001','Kamis','14.10 - 16.40','302','Kls0003','Dos0001'),('Jdwl0006','Matkul0005','Jumat','14.10 - 16.40','301','Kls0003','Dos0004');
+insert  into `jadwalpelajaran`(`idJadwal`,`idMatkul`,`hari`,`jam`,`ruangan`,`idKelas`,`idDosen`) values ('Jdwl0001','Matkul0001','Senin','11.40-16.40','305','Kls0003','Dos0001');
 
 /*Table structure for table `jurusan` */
 
@@ -146,7 +146,7 @@ CREATE TABLE `kelas` (
 
 /*Data for the table `kelas` */
 
-insert  into `kelas`(`idKelas`,`namaKelas`) values ('Kls0002','12.2B.04'),('Kls0003','12.2C.04');
+insert  into `kelas`(`idKelas`,`namaKelas`) values ('Kls0001','12.2A.04'),('Kls0002','12.2B.04'),('Kls0003','12.2C.04');
 
 /*Table structure for table `mahasiswa` */
 
@@ -175,7 +175,7 @@ CREATE TABLE `mahasiswa` (
 
 /*Data for the table `mahasiswa` */
 
-insert  into `mahasiswa`(`idMahasiswa`,`NIM`,`password`,`nama`,`idKelas`,`idJurusan`,`idFakultas`,`alamat`,`email`,`noTelepon`,`keterangan`) values ('Mhs0001','1214690','4690','Andika Permana SIdiq','Kls0003','Jrs0001','Fk0001','Walahar','andika@bsi.ac.id','08532187457','mahasiswa'),('Mhs0003','1213128','3128','Pulan','Kls0002','Jrs0001','Fk0001','Bekasi','pulan@bsu.ac.id','087676543456','mahasiswa');
+insert  into `mahasiswa`(`idMahasiswa`,`NIM`,`password`,`nama`,`idKelas`,`idJurusan`,`idFakultas`,`alamat`,`email`,`noTelepon`,`keterangan`) values ('Mhs0001','1213500','3500','Riswan Permana','Kls0003','Jrs0001','Fk0001','Bekasir','riswan@bsi.ac.id','98872','mahasiswa'),('Mhs0002','1216623','6623','Ihda Fariha Putri','Kls0003','Jrs0001','Fk0001','Bogor','ihda@bsi.ac.id','085440987567','mahasiswa'),('Mhs0003','1216065','6065','Andika Permana Sidiq','Kls0003','Jrs0001','Fk0001','Indramayu','andika@bsi.ac.id','666','mahasiswa'),('Mhs0004','1219000','9000','Azhar Al-Khadhi','Kls0003','Jrs0001','Fk0001','Bekasia','azhar@bsi.ac.id','9998','mahasiswa'),('Mhs0005','1217518','7518','Muhammad Rizal','Kls0003','Jrs0001','Fk0001','Bekasi','mrizal@bsi.ac.id','1154','mahasiswa'),('Mhs0006','1218054','8054','Giosaphira Secunda','Kls0003','Jrs0001','Fk0001','Bekasi','vira@bsi.ac.id','6203','mahasiswa'),('Mhs0007','1212133','2133','Dwinta Shavitri','Kls0003','Jrs0001','Fk0001','Bekasi','dwinta@bsi.ac.id34','28239','mahasiswa'),('Mhs0008','1219130','9130','Piqih Kartika Murti','Kls0003','Jrs0001','Fk0001','Sukabumi','piqih@bsi.ac.id','2390','mahasiswa'),('Mhs0009','1212005','2005','Zihla Natasya','Kls0003','Jrs0001','Fk0001','Bekasi','zihla@bsi.ac.id','12731','mahasiswa'),('Mhs0010','1214070','4070','Fadillah Zahra','Kls0003','Jrs0001','Fk0001','Tasikmalaya','fadillah@bsi.ac.id','2133','mahasiswa');
 
 /*Table structure for table `matakuliah` */
 
@@ -192,7 +192,7 @@ CREATE TABLE `matakuliah` (
 
 /*Data for the table `matakuliah` */
 
-insert  into `matakuliah`(`idMatkul`,`namaMatkul`,`idDosen`) values ('Matkul0001','Sistem Basis Data','Dos0001'),('Matkul0002','Struktur Data','Dos0002'),('Matkul0003','Metode Perancang Program','Dos0007'),('Matkul0005','Web Programming I','Dos0004'),('Matkul0006','Bahasa Inggris','Dos0006'),('Matkul0007','Aplikasi Basis Data','Dos0003');
+insert  into `matakuliah`(`idMatkul`,`namaMatkul`,`idDosen`) values ('Matkul0001','Aplikasi Basis Data','Dos0001');
 
 /*Table structure for table `nilaiuas` */
 
@@ -216,7 +216,7 @@ CREATE TABLE `nilaiuas` (
 
 /*Data for the table `nilaiuas` */
 
-insert  into `nilaiuas`(`idNilaiUas`,`idMatkul`,`nilai`,`keterangan`,`idMahasiswa`,`idDosen`) values ('Uas0001','Matkul0001','90','LULUS','Mhs0001','Dos0001'),('Uas0002','Matkul0002','90','LULUS','Mhs0001','Dos0002'),('Uas0003','Matkul0007','85','LULUS','Mhs0001','Dos0003'),('Uas0004','Matkul0005','90','LULUS','Mhs0001','Dos0004'),('Uas0006','Matkul0006','88','LULUS','Mhs0001','Dos0006'),('Uas0007','Matkul0003','89','LULUS','Mhs0001','Dos0007');
+insert  into `nilaiuas`(`idNilaiUas`,`idMatkul`,`nilai`,`keterangan`,`idMahasiswa`,`idDosen`) values ('Uas0001','Matkul0001','87','LULUS','Mhs0001','Dos0001'),('Uas0002','Matkul0001','78','LULUS','Mhs0002','Dos0001'),('Uas0003','Matkul0001','90','LULUS','Mhs0003','Dos0001');
 
 /*Table structure for table `nilaiuts` */
 
@@ -229,16 +229,17 @@ CREATE TABLE `nilaiuts` (
   `idMahasiswa` char(15) NOT NULL,
   `idDosen` char(15) NOT NULL,
   PRIMARY KEY (`idNilaiUts`),
-  KEY `idMatkul` (`idMatkul`),
   KEY `nilaiuts_ibfk_2` (`idMahasiswa`),
   KEY `nilaiuts_ibfk_3` (`idDosen`),
+  KEY `idMatkul` (`idMatkul`),
   CONSTRAINT `nilaiuts_ibfk_2` FOREIGN KEY (`idMahasiswa`) REFERENCES `mahasiswa` (`idMahasiswa`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `nilaiuts_ibfk_3` FOREIGN KEY (`idDosen`) REFERENCES `dosen` (`idDosen`) ON DELETE CASCADE ON UPDATE CASCADE
+  CONSTRAINT `nilaiuts_ibfk_3` FOREIGN KEY (`idDosen`) REFERENCES `dosen` (`idDosen`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `nilaiuts_ibfk_4` FOREIGN KEY (`idMatkul`) REFERENCES `matakuliah` (`idMatkul`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `nilaiuts` */
 
-insert  into `nilaiuts`(`idNilaiUts`,`idMatkul`,`nilai`,`idMahasiswa`,`idDosen`) values ('Uts0001','Matkul0001','90','Mhs0001','Dos0001'),('Uts0002','Matkul0002','89','Mhs0001','Dos0002'),('Uts0003','Matkul0007','89','Mhs0001','Dos0003'),('Uts0004','Matkul0005','90','Mhs0001','Dos0004'),('Uts0006','Matkul0006','88','Mhs0001','Dos0006'),('Uts0007','Matkul0003','89','Mhs0001','Dos0007');
+insert  into `nilaiuts`(`idNilaiUts`,`idMatkul`,`nilai`,`idMahasiswa`,`idDosen`) values ('Uts0001','Matkul0001','78','Mhs0001','Dos0001'),('Uts0002','Matkul0001','87','Mhs0002','Dos0001'),('Uts0003','Matkul0001','78','Mhs0003','Dos0001');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

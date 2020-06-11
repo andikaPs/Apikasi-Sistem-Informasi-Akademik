@@ -126,7 +126,7 @@ while ($kel = mysqli_fetch_array($ambilKelas)) {
 
           <!-- nama -->
           <label for="name">Nama</label>
-          <input type="text" name="nama" id="name" class="form-control" value="<?= $Nama; ?>" <?= $readonly; ?>>
+          <input type="text" name="nama" id="name" class="form-control" value="<?= $Nama; ?>" <?= $readonly; ?> required>
           <!-- end nama -->
 
           <!-- alamat -->

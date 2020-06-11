@@ -2,7 +2,7 @@
 include('../../component/koneksi.php');
 include('../umum/menu.php');
 
-$query = mysqli_query($kon, "SELECT * FROM mahasiswa, kelas, jurusan WHERE mahasiswa.idKelas = kelas.idKelas AND mahasiswa.idJurusan = jurusan.idJurusan ORDER BY NIM DESC");
+$query = mysqli_query($kon, "SELECT * FROM mahasiswa, kelas, jurusan WHERE mahasiswa.idKelas = kelas.idKelas AND mahasiswa.idJurusan = jurusan.idJurusan ORDER BY kelas.idKelas ASC");
 if (mysqli_num_rows($query) > 0) {
   $no = 0;
   while ($row = mysqli_fetch_array($query)) {

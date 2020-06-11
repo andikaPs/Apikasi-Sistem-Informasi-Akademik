@@ -21,22 +21,22 @@ else{
   $id="Uts".$tbh;
 }
 $idD = $_SESSION['id'];
-$idK = $_GET['id'];
+$idM = $_GET['id'];
 
 $ambilData = mysqli_fetch_array(mysqli_query($kon, "SELECT * FROM dosen WHERE NIP = '$idD'"));
 $h = $ambilData['idDosen'];
+$ambil = mysqli_fetch_array(mysqli_query($kon, "SELECT * FROM mataKuliah WHERE idDosen = '$h'"));
+$m = $ambil['idMatkul'];
 
-$matkul = $_POST['matkul'];
-$Mhs = $_POST['nama'];
 $nilai = $_POST['nilai'];
 $tombol = $_POST['tombol'];
 if ($tombol) {
-  $h = mysqli_query($kon, "INSERT INTO nilaiUts(idNilaiUts, idMatkul, nilai, idMahasiswa, idDosen) VALUES ('$id', '$matkul', '$nilai', '$Mhs', '$h')");
+  $h = mysqli_query($kon, "INSERT INTO nilaiUts(idNilaiUts, idMatkul, nilai, idMahasiswa, idDosen) VALUES ('$id', '$m', '$nilai', '$idM', '$h')");
   if ($h) {
     echo "
       <script>
         alert('Data Berhasil disimpan!');
-        window.location.href = 'uts-mahasiswa.php?id=$idK';
+        window.location.href = 'daftar-kelas.php';
       </script>
     ";
   } else {
@@ -44,21 +44,6 @@ if ($tombol) {
   }
 }
 
-
-
-
-$ambilMatkul = mysqli_query($kon, "SELECT * FROM mataKuliah WHERE idDosen = '$h'");
-while ($pil = mysqli_fetch_array($ambilMatkul)) {
-    $op.="
-              <option value='{$pil['idMatkul']}'>{$pil['namaMatkul']}</option>
-    ";
-}
-$ambilMhs = mysqli_query($kon, "SELECT * FROM mahasiswa WHERE idKelas = '$idK'");
-while ($pil = mysqli_fetch_array($ambilMhs)) {
-  $mhs.="
-              <option value='{$pil['idMahasiswa']}'>{$pil['nama']}</option>
-  ";
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -103,23 +88,10 @@ while ($pil = mysqli_fetch_array($ambilMhs)) {
     <div class="card">
       <div class="card-body">
         <div class="row">
-          <a href="uts-mahasiswa.php?id=<?= $idK; ?>" class="btn">Kembali</a>
+          <a href="daftar-kelas.php" class="btn">Kembali</a>
         </div>
 
         <form method="POST" action="">
-          <!-- nama mahasiswa -->
-          <label for="mahasiswa">Nama Mahasiswa</label>
-          <select name="nama" id="mahasiswa" class="form-control">
-            <option>--Pilih--</option>
-            <?= $mhs; ?>
-          </select>
-
-          <!-- mata kuliah -->
-          <label for="matkul">Mata Kuliah</label>
-          <select name="matkul" id="matkul" class="form-control">
-            <option>-Pilih-</option>
-            <?= $op; ?>
-          </select>
 
           <!-- nilai -->
           <label for="nilai">Nilai</label>

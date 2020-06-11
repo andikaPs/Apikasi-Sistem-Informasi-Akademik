@@ -43,11 +43,10 @@ if ($_GET['id'] == "gagal") {
         <form method="POST" action="../../component/proses_login.php" autocomplete="off">
           <?= $info; ?>
           <label for=" username">Username</label>
-          <input type="text" name="username" id="username" class="form-control" placeholder="NIM" reuqired>
+          <input type="text" name="username" id="username" class="form-control" placeholder="NIM" required>
 
           <label for="password">Password</label>
-          <input type="password" name="password" id="password" class="form-control" placeholder="4 angka terakhir NIM"
-            reuqired>
+          <input type="password" name="password" id="password" class="form-control" placeholder="4 angka terakhir NIM" required>
 
           <!-- <input type="submit" value="Login" class="btn"> -->
           <!-- <a href="beranda.html" class="btn">login</a> -->

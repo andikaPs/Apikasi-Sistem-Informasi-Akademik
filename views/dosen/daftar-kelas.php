@@ -13,9 +13,12 @@ while ($row = mysqli_fetch_array($query)) {
         <div class='card'>
           <div class='card-body'>
             <h3>{$row['namaKelas']}</h3>
-            <div class='row'>
+            <!--<div class='row'>
               <a href='uts-mahasiswa.php?id={$row['idKelas']}' class='btn top-28'>UTS</a>
               <a href='uas-mahasiswa.php?id={$row['idKelas']}' class='btn top-28'>UAS</a>
+            </div>-->
+            <div class='row'>
+              <a href='daftar-mahasiswa.php?id={$row['idKelas']}' class='btn top-28'>lihat</a>
             </div>
           </div>
         </div>

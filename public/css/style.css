@@ -42,6 +42,40 @@ body {
 .text-warning {
   color: #ECC31F;
 }
+.bg-info {
+  color:#DC3545;
+  background: #ECC31F;
+  padding: 5px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+}
+
+.text-danger {
+  color: #FCF9F9;
+  background: #DC3545;
+  padding: 5px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+}
+.text-primary {
+  color: #FCF9F9;
+  background: #0069D9;
+  padding: 5px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+}
 
 a.bg-danger {
   background-color: #dc3545;
@@ -148,6 +182,9 @@ textarea:read-only {
   color: #666;
 }
 
+select.form-control option {
+  height: 100px;
+}
 
 input[type=submit] {
   background-color: #7379D1;

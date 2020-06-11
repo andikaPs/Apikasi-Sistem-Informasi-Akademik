@@ -85,7 +85,7 @@ if ($tombol) {
         <form method="POST" action="">
           <!-- nama kelas -->
           <label for="kelas">Nama Kelas</label>
-          <input type="text" name="kelas" id="kelas" class="form-control">
+          <input type="text" name="kelas" id="kelas" class="form-control"required>
 
           <input type="submit" value="simpan" class="btn" name='tombol'>
         </form>

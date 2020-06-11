@@ -118,16 +118,16 @@ if ($tombol) {
 
           <!-- password -->
           <label for="hari">Hari</label>
-          <input type="text" name="hari" id="hari" class="form-control">
+          <input type="text" name="hari" id="hari" class="form-control"required>
 
           <!-- Jam -->
           <label for="jam">Jam</label>
-          <input type="text" name="jam" id="jam" class="form-control">
+          <input type="text" name="jam" id="jam" class="form-control"required>
           <!-- end Jam -->
 
           <!-- ruamgam -->
           <label for="ruamgam">Ruangan</label>
-          <input type="text" name="ruangan" id="ruangan" class="form-control">
+          <input type="text" name="ruangan" id="ruangan" class="form-control"required>
           <!-- ruamgam -->
 
           <!-- kelas -->

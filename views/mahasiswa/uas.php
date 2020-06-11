@@ -7,12 +7,17 @@ if (mysqli_num_rows($query)) {
   $no = 0;
   while ($row = mysqli_fetch_array($query)) {
     $no++;
+    if ($row['nilai'] <= 75) {
+      $style = "text-danger";
+    } else if($row['nilai'] > 75) {
+      $style = "text-primary";
+    }
     $tr.= "
             <tr>
               <td>$no</td>
               <td>{$row['namaMatkul']}</td>
               <td>{$row['nilai']}</td>
-              <td>{$row['keterangan']}</td>
+              <td><span class='$style'>{$row['keterangan']}</span></td>
             </tr>
     ";
   }

@@ -23,7 +23,7 @@ else{
 $ambilDosen = mysqli_query($kon, "SELECT * FROM dosen");
 while ($dsn = mysqli_fetch_array($ambilDosen)) {
   $op.="
-    <option value='{$dsn['idDosen']}'>{$dsn['nama']}</option>
+              <option value='{$dsn['idDosen']}'>{$dsn['nama']}</option>
   ";
 }
 

@@ -88,7 +88,7 @@ if ($tombol) {
         <form method="POST" action="">
           <!-- judul berita -->
           <label for="judul">Judul</label>
-          <input type="text" name="judul" id="judul" class="form-control">
+          <input type="text" name="judul" id="judul" class="form-control" required>
 
           <!-- isi berita -->
           <label for="isi">Isi Berita</label>

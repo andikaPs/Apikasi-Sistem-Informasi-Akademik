@@ -54,8 +54,8 @@
   `idKelas` char(15) DEFAULT NULL,
   `keterangan` varchar(10) NOT NULL DEFAULT 'dosen',
   PRIMARY KEY (`idDosen`),
-  KEY `idKelas` (`idKelas`),
-  CONSTRAINT `dosen_ibfk_2` FOREIGN KEY (`idKelas`) REFERENCES `kelas` (`idKelas`)
+  KEY `dosen_ibfk_2` (`idKelas`),
+  CONSTRAINT `dosen_ibfk_2` FOREIGN KEY (`idKelas`) REFERENCES `kelas` (`idKelas`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="fakultas" view="colnames">
@@ -178,8 +178,8 @@
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="nilaiuts" view="colnames">
-<left>901</left>
-<top>355</top>
+<left>774</left>
+<top>397</top>
 <width>88</width>
 <height>122</height>
 <sql_create_table>CREATE TABLE `nilaiuts` (
@@ -189,11 +189,12 @@
   `idMahasiswa` char(15) NOT NULL,
   `idDosen` char(15) NOT NULL,
   PRIMARY KEY (`idNilaiUts`),
-  KEY `idMatkul` (`idMatkul`),
   KEY `nilaiuts_ibfk_2` (`idMahasiswa`),
   KEY `nilaiuts_ibfk_3` (`idDosen`),
+  KEY `idMatkul` (`idMatkul`),
   CONSTRAINT `nilaiuts_ibfk_2` FOREIGN KEY (`idMahasiswa`) REFERENCES `mahasiswa` (`idMahasiswa`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `nilaiuts_ibfk_3` FOREIGN KEY (`idDosen`) REFERENCES `dosen` (`idDosen`) ON DELETE CASCADE ON UPDATE CASCADE
+  CONSTRAINT `nilaiuts_ibfk_3` FOREIGN KEY (`idDosen`) REFERENCES `dosen` (`idDosen`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `nilaiuts_ibfk_4` FOREIGN KEY (`idMatkul`) REFERENCES `matakuliah` (`idMatkul`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 </tables>

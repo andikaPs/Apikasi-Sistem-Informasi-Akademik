@@ -2,7 +2,7 @@
 include('../../component/koneksi.php');
 include('../umum/menu.php');
 $idM = $_GET['id'];
-$ambilData = mysqli_fetch_array(mysqli_query($kon, "SELECT * FROM nilaiUas, mahasiswa, mataKuliah WHERE nilaiUas.idMahasiswa = mahasiswa.idMahasiswa AND nilaiUas.idMatkul = mataKuliah.idMatkul AND nilaiUas.idMatkul = '$idM'"));
+$ambilData = mysqli_fetch_array(mysqli_query($kon, "SELECT * FROM mahasiswa WHERE idMahasiswa = '$idM'"));
 $nama = $ambilData['nama'];
 
 $nilai = $_POST['nilai'];
@@ -13,7 +13,7 @@ if ($nilai > 75) {
 }
 $tombol = $_POST['tombol'];
 if ($tombol) {
-  $h = mysqli_query($kon, "UPDATE nilaiUas SET nilai = '$nilai', keterangan = '$ket' WHERE idMatkul = '$idM'");
+  $h = mysqli_query($kon, "UPDATE nilaiUas SET nilai = '$nilai', keterangan = '$ket' WHERE idMahasiswa = '$idM'");
   if ($h) {
     $info = "Data Berhasil disimpan!";
 
@@ -30,7 +30,7 @@ if ($tombol) {
   $tblSimpan = "<input type='submit' value='Simpan' class='btn' name='tombol'>";
 }
 
-$ambil = mysqli_fetch_array(mysqli_query($kon, "SELECT * FROM nilaiUas, mahasiswa, mataKuliah WHERE nilaiUas.idMahasiswa = mahasiswa.idMahasiswa AND nilaiUas.idMatkul = mataKuliah.idMatkul AND nilaiUas.idMatkul = '$idM'"));
+$ambil = mysqli_fetch_array(mysqli_query($kon, "SELECT * FROM nilaiUas INNER JOIN mataKuliah ON nilaiUas.idMatkul = mataKuliah.idMatkul WHERE idMahasiswa = '$idM'"));
 $hm = $ambil['idMatkul'];
 $nilai = $ambil['nilai'];
 $matkul = $ambil['namaMatkul'];

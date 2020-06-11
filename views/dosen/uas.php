@@ -20,8 +20,11 @@ else{
   $id="Uas".$tbh;
 }
 $idD = $_SESSION['id'];
+$idM = $_GET['id'];
 $ambilData = mysqli_fetch_array(mysqli_query($kon, "SELECT * FROM dosen WHERE NIP = '$idD'"));
 $h = $ambilData['idDosen'];
+$ambil = mysqli_fetch_array(mysqli_query($kon, "SELECT * FROM mataKuliah WHERE idDosen = '$h'"));
+$m = $ambil['idMatkul'];
 
 $matkul = $_POST['matkul'];
 $Mhs = $_POST['nama'];
@@ -33,7 +36,7 @@ if ($nilai > 75) {
 }
 $tombol = $_POST['tombol'];
 if ($tombol) {
-  $h = mysqli_query($kon, "INSERT INTO nilaiUas(idNilaiUas, idMatkul, nilai, keterangan, idMahasiswa, idDosen) VALUES ('$id', '$matkul', '$nilai', '$ket', '$Mhs', '$h')");
+  $h = mysqli_query($kon, "INSERT INTO nilaiUas(idNilaiUas, idMatkul, nilai, keterangan, idMahasiswa, idDosen) VALUES ('$id', '$m', '$nilai', '$ket', '$idM', '$h')");
   if ($h) {
     $info = "Data Berhasil disimpan!";
     $keterangan = "
@@ -47,43 +50,6 @@ if ($tombol) {
   }
 } else {
   $tblSimpan = "<input type='submit' value='Simpan' class='btn' name='tombol'>";
-}
-
-$ambil = mysqli_fetch_array(mysqli_query($kon, "SELECT * FROM nilaiUas WHERE idMatkul = '$matkul'"));
-$hm = $ambil['idMatkul'];
-$nilai = $ambil['nilai'];
-$pMhs = $ambil['idMahasiswa'];
-
-$idD = $_SESSION['id'];
-$ambilDosen = mysqli_fetch_array(mysqli_query($kon, "SELECT * FROM dosen WHERE NIP = '$idD'"));
-$h = $ambilDosen['idDosen'];
-
-
-$ambilMatkul = mysqli_query($kon, "SELECT * FROM mataKuliah WHERE idDosen = '$h'");
-while ($pil = mysqli_fetch_array($ambilMatkul)) {
-  if ($hm == $pil['idMatkul']) {
-    $op.="
-              <option value='{$pil['idMatkul']}' selected>{$pil['namaMatkul']}</option>
-  ";
-  } else {
-    $op.="
-              <option value='{$pil['idMatkul']}'>{$pil['namaMatkul']}</option>
-    ";
-  }
-}
-
-$idK = $_GET['id'];
-$ambilMhs = mysqli_query($kon, "SELECT * FROM mahasiswa WHERE idKelas = '$idK'");
-while ($pil = mysqli_fetch_array($ambilMhs)) {
-  if ($pMhs == $pil['idMahasiswa']) {
-    $mhs.="
-                <option value='{$pil['idMahasiswa']}' selected>{$pil['nama']}</option>
-    ";
-  } else {
-    $mhs.="
-                <option value='{$pil['idMahasiswa']}'>{$pil['nama']}</option>
-    ";
-  }
 }
 ?>
 <!DOCTYPE html>
@@ -129,23 +95,10 @@ while ($pil = mysqli_fetch_array($ambilMhs)) {
     <div class="card">
       <div class="card-body">
         <div class="row">
-          <a href="uas-mahasiswa.php?id=<?= $idK; ?>" class="btn">Kembali</a>
+          <a href="daftar-kelas.php" class="btn">Kembali</a>
         </div>
 
         <form method="POST" action="">
-          <!-- nama mahasiswa -->
-          <label for="mahasiswa">Nama Mahasiswa</label>
-          <select name="nama" id="mahasiswa" class="form-control">
-            <option>--Pilih--</option>
-            <?= $mhs; ?>
-          </select>
-
-          <!-- mata kuliah -->
-          <label for="matkul">Mata Kuliah</label>
-          <select name="matkul" id="matkul" class="form-control">
-            <option>-Pilih-</option>
-            <?= $op; ?>
-          </select>
 
           <!-- nilai -->
           <label for="nilai">Nilai</label>
