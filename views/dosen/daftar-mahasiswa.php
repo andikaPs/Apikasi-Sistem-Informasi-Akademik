@@ -2,6 +2,7 @@
 include('../../component/koneksi.php');
 include('../umum/menu.php');
 
+
 $id = $_GET['id'];
 $idD = $_SESSION['id'];
 $ambilData = mysqli_fetch_array(mysqli_query($kon, "SELECT * FROM dosen WHERE NIP = '$idD'"));
