@@ -11,7 +11,7 @@ $kls = $_POST['kelas'];
 $dosen = $_POST['dosen'];
 $tombol = $_POST['tombol'];
 if ($tombol) {
-  $h = mysqli_query($kon, "UPDATE kelas SET namaKelas = '$kls', idDosen = '$dosen' WHERE idKelas = '$id'");
+  $h = mysqli_query($kon, "UPDATE kelas SET namaKelas = '$kls' WHERE idKelas = '$id'");
   if ($h) {
     echo "
       <script>
@@ -21,19 +21,6 @@ if ($tombol) {
     ";
   } else {
     echo "Gagal";
-  }
-}
-$ambilDosen = mysqli_query($kon, "SELECT * FROM dosen");
-while ($dsn = mysqli_fetch_array($ambilDosen)) {
-  if ($idD == $dsn['idDosen']) {
-    $op.="
-      <option value='{$dsn['idDosen']}' selected>{$dsn['nama']}</option>
-    ";
-    
-  } else {
-    $op.="
-      <option value='{$dsn['idDosen']}'>{$dsn['nama']}</option>
-    ";
   }
 }
 
@@ -87,13 +74,6 @@ while ($dsn = mysqli_fetch_array($ambilDosen)) {
           <!-- nama kelas -->
           <label for="kelas">Nama Kelas</label>
           <input type="text" name="kelas" id="kelas" class="form-control" value="<?= $kelas; ?>" required>
-
-          <!-- dosen -->
-          <label for="dosen">Dosen</label>
-          <select name="dosen" id="dosen" class="form-control">
-            <option>--Pilih--</option>
-            <?= $op; ?>
-          </select>
 
           <input type="submit" value="simpan" class="btn" name='tombol'>
         </form>
