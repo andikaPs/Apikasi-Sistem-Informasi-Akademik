@@ -3,9 +3,11 @@ error_reporting(0);
 if ($_GET['id'] == "gagal") {
   $info = "<label class='info'>Username atau Password Salah!</label>";
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 
 <head>
   <meta charset="UTF-8">
