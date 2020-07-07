@@ -2,6 +2,7 @@
 include('../../component/koneksi.php');
 include('../umum/menu.php');
 $idM = $_GET['id'];
+$idK = $_GET['idK'];
 $ambilData = mysqli_fetch_array(mysqli_query($kon, "SELECT * FROM mahasiswa WHERE idMahasiswa = '$idM'"));
 $nama = $ambilData['nama'];
 
@@ -78,7 +79,7 @@ $matkul = $ambil['namaMatkul'];
     <div class="card">
       <div class="card-body">
         <div class="row">
-          <a href="daftar-kelas.php" class="btn">Kembali</a>
+          <a href="daftar-mahasiswa.php?id=<?= $idK; ?>" class="btn">Kembali</a>
         </div>
 
         <form method="POST" action="">

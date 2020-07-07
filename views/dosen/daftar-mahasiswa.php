@@ -15,7 +15,7 @@ if (mysqli_num_rows($query) > 0) {
     $UTS = mysqli_fetch_array(mysqli_query($kon, "SELECT * FROM nilaiUts, dosen WHERE nilaiUts.idDosen = dosen.idDosen AND nilaiUts.idMahasiswa = '{$row['idMahasiswa']}' AND dosen.idDosen = '$h'"));
     if ($nilai = $UTS['nilai'] == "") {
       $uts = "Belum Diinput";
-      $tombol = "<a href='uts.php?id={$row['idMahasiswa']}' class='btn'>UTS</a>";
+      $tombol = "<a href='uts.php?id={$row['idMahasiswa']}&idK=$id' class='btn'>UTS</a>";
     } else {
       $uts = $UTS['nilai'];
       $tombol = "";
@@ -30,12 +30,12 @@ if (mysqli_num_rows($query) > 0) {
       $style = "text-primary";
     } else if ($UAS['nilai'] == "") {
       $edit = "";
-      $tbl = "<a href='uas.php?id={$row['idMahasiswa']}' class='btn'>UAS</a>";
+      $tbl = "<a href='uas.php?id={$row['idMahasiswa']}&idK=$id' class='btn'>UAS</a>";
       $uas = "Belum Diinput";
       $ket = "Belum Ditentukan";
       $style = "bg-info";
     } else if ($UAS['nilai'] <= 75) {
-      $edit = "<a href='edit-uas.php?id={$row['idMahasiswa']}' class='btn'>Edit Nilai UAS</a>";
+      $edit = "<a href='edit-uas.php?id={$row['idMahasiswa']}&idK=$id' class='btn'>Edit Nilai UAS</a>";
       $uas = $UAS['nilai'];
       $ket = $UAS['keterangan'];
       $style = "text-danger";

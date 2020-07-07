@@ -21,6 +21,7 @@ else{
 }
 $idD = $_SESSION['id'];
 $idM = $_GET['id'];
+$idK = $_GET['idK'];
 $ambilData = mysqli_fetch_array(mysqli_query($kon, "SELECT * FROM dosen WHERE NIP = '$idD'"));
 $h = $ambilData['idDosen'];
 $ambil = mysqli_fetch_array(mysqli_query($kon, "SELECT * FROM mataKuliah WHERE idDosen = '$h'"));
@@ -95,7 +96,7 @@ if ($tombol) {
     <div class="card">
       <div class="card-body">
         <div class="row">
-          <a href="daftar-kelas.php" class="btn">Kembali</a>
+          <a href="daftar-mahasiswa.php?id=<?= $idK; ?>" class="btn">Kembali</a>
         </div>
 
         <form method="POST" action="">
